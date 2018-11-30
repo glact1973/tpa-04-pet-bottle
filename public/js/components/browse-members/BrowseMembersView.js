@@ -45,6 +45,43 @@ class BrowseMembersView {
         </div>
         <button class="btn-next-member">次へ</button>
     */
+    const memberProfile = document.createElement('div');
+    memberProfile.className = 'member-profile';
+
+    const memberImageBox = document.createElement('div');
+    memberImageBox.className = 'member-image-box';
+
+    const img = document.createElement('img')
+    img.setAttribute('src','');
+    img.setAttribute('alt','(会員のイメージ)');
+
+    const h3 = document.createElement('h3');
+    h3.innerHTML = '名前';
+
+    const memberName = document.createElement('p');
+    memberName.className = 'member-name';
+    memberName.innerHTML = 'おばた';
+
+    const h3_2nd = document.createElement('h3');
+    h3_2nd.innerHTML('一言');
+    
+    const memberText = document.createElement('p');
+    memberText.innerHTML = '営業からエンジニア見習いになるところです';
+
+    const btnNextMember = document.createElement('button')
+    btnNextMember.className = 'btn-next-member';
+    btnNextMember.innerHTML = '次へ';
+
+    memberProfile.appendChild(memberImageBox);
+    memberImageBox.appendChild(img);
+    memberProfile.appendChild(h3);
+    memberProfile.appendChild(memberName);
+    memberProfile.appendChild(h3_2nd);
+    memberProfile.appendChild(memberText);
+
+    document.querySelector('#container').appendChild(memberProfile);
+    document.querySelector('#container').appendChild(btnNextMember);
+
   }
 }
 
