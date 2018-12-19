@@ -45,14 +45,13 @@ class BrowseMembersView {
         </div>
         <button class="btn-next-member">次へ</button>
     */
-    // 追加ここから
     const memberProfile = document.createElement('div');
     memberProfile.className = 'member-profile';
 
     const memberImageBox = document.createElement('div');
     memberImageBox.className = 'member-image-box';
 
-    const img = document.createElement('img')
+    const img = document.createElement('img');
     img.setAttribute('src',props.membersList[currentMemberIndex].thumbnailUrl);
     img.setAttribute('alt','(会員のイメージ)');
 
@@ -65,18 +64,17 @@ class BrowseMembersView {
 
     const hitokoto = document.createElement('h3');
     hitokoto.innerHTML = '一言';
-    
+
     const memberText = document.createElement('p');
     memberText.innerHTML = props.membersList[currentMemberIndex].quote;
 
-    const btnNextMember = document.createElement('button')
+    const btnNextMember = document.createElement('button');
     btnNextMember.className = 'btn-next-member';
     btnNextMember.innerHTML = '次へ';
     // ボタンを押したら次のデータを読み込む処理(incrementCurrentMember)をどこのJSにどう書くか悩み中
-    btnNextMember.addEventListener('click',() => {
-      alert('「次へ」を動かすためにincrementCurrentMemberを呼びたい');
-    }); 
-    // ここまで 
+    btnNextMember.addEventListener('click', () => {
+      handleBrowseNextMember();
+    });
 
     memberProfile.appendChild(memberImageBox);
     memberImageBox.appendChild(img);
