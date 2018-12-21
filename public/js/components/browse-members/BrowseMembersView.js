@@ -45,6 +45,46 @@ class BrowseMembersView {
         </div>
         <button class="btn-next-member">次へ</button>
     */
+    const memberProfile = document.createElement('div');
+    memberProfile.className = 'member-profile';
+
+    const memberImageBox = document.createElement('div');
+    memberImageBox.className = 'member-image-box';
+
+    const img = document.createElement('img');
+    img.setAttribute('src',props.membersList[currentMemberIndex].thumbnailUrl);
+    img.setAttribute('alt','(会員のイメージ)');
+
+    const namae = document.createElement('h3');
+    namae.innerHTML = '名前';
+
+    const memberName = document.createElement('p');
+    memberName.className = 'member-name';
+    memberName.innerHTML = props.membersList[currentMemberIndex].name;
+
+    const hitokoto = document.createElement('h3');
+    hitokoto.innerHTML = '一言';
+
+    const memberText = document.createElement('p');
+    memberText.innerHTML = props.membersList[currentMemberIndex].quote;
+
+    const btnNextMember = document.createElement('button');
+    btnNextMember.className = 'btn-next-member';
+    btnNextMember.innerHTML = '次へ';
+    btnNextMember.addEventListener('click', () => {
+      handleBrowseNextMember();
+    });
+
+    memberProfile.appendChild(memberImageBox);
+    memberImageBox.appendChild(img);
+    memberProfile.appendChild(namae);
+    memberProfile.appendChild(memberName);
+    memberProfile.appendChild(hitokoto);
+    memberProfile.appendChild(memberText);
+
+    document.querySelector('#container').appendChild(memberProfile);
+    document.querySelector('#container').appendChild(btnNextMember);
+    // /追加ここまで
   }
 }
 
